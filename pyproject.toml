@@ -1,0 +1,51 @@
+[project]
+name = "signalsaurus"
+version = "0.1.0"
+description = "Convenience structures for playing with signal processing"
+readme = "README.md"
+authors = [
+    {name = "jlazear", email = "jlazear@gmail.com"},
+]
+requires-python = ">=3.12"
+dependencies = ["numpy"]
+classifiers = [
+  # License
+  "License :: OSI Approved :: MIT License",
+
+  # Python versions supported by the package
+  "Programming Language :: Python :: 3.12",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.15,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.ruff.lint]
+select = [
+  # pycodestyle
+  "E",
+  # Pyflakes
+  "F",
+  # pyupgrade
+  "UP",
+  # flake8-bugbear
+  "B",
+  # flake8-simplify
+  "SIM",
+  # isort
+  "I",
+]
+# Recommended ignore list for preventing clashes between ruff lint and ruff format.
+ignore = [
+  # indentation-with-invalid-multiple
+  "E111",
+  #indentation-with-invalid-multiple-comment
+  "E114",
+  # over-indented
+  "E117",
+]
+
+[tool.mypy]
+files = [
+    "src"
+]
